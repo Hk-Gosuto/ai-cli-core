@@ -85,8 +85,6 @@ EXAMPLES
   $ dotnet-ai-core ask "Check running process on port 3000"
 ```
 
-_See code: [dist/commands/ask.ts](https://github.com/abhagsain/ai-cli/blob/v1.2.3/dist/commands/ask.ts)_
-
 ## `dotnet-ai-core auth`
 
 Update existing or add new OpenAI API Key
