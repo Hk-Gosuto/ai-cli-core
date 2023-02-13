@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ai-cli-core", "src\ai-cli-core\ai-cli-core.csproj", "{73F32A03-0F5A-4BA7-BADF-8EC9791842FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73F32A03-0F5A-4BA7-BADF-8EC9791842FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73F32A03-0F5A-4BA7-BADF-8EC9791842FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73F32A03-0F5A-4BA7-BADF-8EC9791842FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73F32A03-0F5A-4BA7-BADF-8EC9791842FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D0348933-FACF-44E3-BD61-9C9B51129DAD}
+	EndGlobalSection
+EndGlobal
