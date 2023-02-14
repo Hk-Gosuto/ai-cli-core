@@ -16,9 +16,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Crayon" Version="2.0.69" />
     <PackageReference Include="Kurukuru" Version="1.4.2" />
     <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="4.0.2" />
-    <PackageReference Include="NerdyMishka.Chalk" Version="0.1.0" />
     <PackageReference Include="OpenAI" Version="1.4.0" />
     <PackageReference Include="Pastel" Version="4.1.0" />
     <PackageReference Include="Sharprompt" Version="2.4.5" />

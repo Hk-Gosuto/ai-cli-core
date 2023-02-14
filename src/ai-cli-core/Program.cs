@@ -3,12 +3,12 @@ using System.Text.RegularExpressions;
 using ai_cli_core;
 using Kurukuru;
 using McMaster.Extensions.CommandLineUtils;
-using NerdyMishka;
 using Newtonsoft.Json;
 using OpenAI_API;
 using OpenAI_API.Completions;
 using Sharprompt;
 using Sharprompt.Fluent;
+using static Crayon.Output;
 
 Console.OutputEncoding = Encoding.UTF8;
 
@@ -34,7 +34,7 @@ app.Command(
             {
                 Console.WriteLine(
                     "You haven't set your OpenAI API key. Please login with "
-                        + Chalk.Bold().BrightYellow().Draw("ai auth")
+                        + Bold().Yellow().Text("ai auth")
                 );
                 return 1;
             }
@@ -69,8 +69,8 @@ app.Command(
                     value = match.Success ? match.Groups[1].Value : value;
                     Console.WriteLine(
                         "> "
-                            + Chalk.Green().Draw("Command is ")
-                            + Chalk.Bold().BrightYellow().Draw($"`{value}`")
+                            + Green().Text("Command is ")
+                            + Bold().Yellow().Text($"`{value}`")
                     );
                     var command = Sharprompt.Prompt.Select<string>(
                         o =>
@@ -81,8 +81,8 @@ app.Command(
                     if (command.Equals("Copy to clipboard"))
                         TextCopy.ClipboardService.SetText(value);
                     Console.WriteLine(
-                        Chalk.Red().Draw("Please don't run a command that you don't understand.")
-                            + Chalk.Underline().Red().Draw($"Especially destructive commands")
+                        Red().Text("Please don't run a command that you don't understand.")
+                            + Underline().Red().Text($"Especially destructive commands")
                     );
                 }
             }
@@ -121,7 +121,7 @@ app.Command(
             aiCliConfig.Model = new OpenAI_API.Models.Model(model) { OwnedBy = "openai" };
             await SaveConfigAsync(aiCliConfig, cancellationToken);
             Console.WriteLine(
-                "✅ Model preference saved. You can change it anytime again with " + Chalk.Bold().BrightYellow().Draw($"ai model")
+                "✅ Model preference saved. You can change it anytime again with " + Bold().Yellow().Text($"ai model")
             );
         });
     }
@@ -142,7 +142,7 @@ app.Command(
             aiCliConfig.OpenAIApiKey = apiKey;
             await SaveConfigAsync(aiCliConfig, cancellationToken);
             Console.WriteLine(
-                "API Key is saved at " + Chalk.Bold().BrightYellow().Draw($"{GetConfigFilePath()}")
+                "API Key is saved at " + Bold().Yellow().Text($"{GetConfigFilePath()}")
             );
         });
     }
