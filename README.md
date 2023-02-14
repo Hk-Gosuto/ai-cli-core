@@ -3,7 +3,7 @@ Dotnet GPT3 Powered CLI
 
 <!-- [![package workflow](https://github.com/dotnetcore/Hk-Gosuto/ai-cli-core/workflows/release.yml/badge.svg)](https://github.com/Hk-Gosuto/ai-cli-core/actions/workflows/release.yml) -->
 ![GitHub stars](https://img.shields.io/github/stars/Hk-Gosuto/ai-cli-core)
-![Commit Date](https://img.shields.io/github/last-commit/Hk-Gosuto/ai-cli-core/master.svg?logo=github&logoColor=green&label=commit)
+![Commit Date](https://img.shields.io/github/last-commit/Hk-Gosuto/ai-cli-core/main.svg?logo=github&logoColor=green&label=commit)
 ![GitHub license](https://img.shields.io/github/license/Hk-Gosuto/ai-cli-core)
 <!-- ![Docker image](https://img.shields.io/docker/v/Hk-Gosuto/ai-cli-core?label=docker%20image) -->
 
