@@ -4,8 +4,8 @@ using ai_cli_core;
 using Kurukuru;
 using McMaster.Extensions.CommandLineUtils;
 using Newtonsoft.Json;
-using OpenAI.GPT3.Managers;
 using OpenAI.GPT3;
+using OpenAI.GPT3.Managers;
 using OpenAI.GPT3.ObjectModels;
 using OpenAI.GPT3.ObjectModels.RequestModels;
 using Sharprompt;
@@ -40,10 +40,7 @@ app.Command(
                 );
                 return 1;
             }
-            var openai = new OpenAIService(new OpenAiOptions
-            {
-                ApiKey = apiKey
-            });
+            var openai = new OpenAIService(new OpenAiOptions { ApiKey = apiKey });
             var prompt =
                 $"{(OperatingSystem.IsWindows() ? CommonConst.PowerShellPrompt : CommonConst.UnixPrompt)}{question?.Value?.Trim()}\nA - ";
 
@@ -110,16 +107,13 @@ app.Command(
                     }
                 }
 
-
                 if (!string.IsNullOrEmpty(ask))
                 {
                     var codeRegex = new Regex("`(.*?)`");
                     var match = codeRegex.Match(ask);
                     ask = match.Success ? match.Groups[1].Value : ask;
                     Console.WriteLine(
-                        "> "
-                            + Green().Text("Command is ")
-                            + Bold().Yellow().Text($"`{ask}`")
+                        "> " + Green().Text("Command is ") + Bold().Yellow().Text($"`{ask}`")
                     );
                     var command = Sharprompt.Prompt.Select<string>(
                         o =>
@@ -178,7 +172,8 @@ app.Command(
             aiCliConfig.Model = model;
             await SaveConfigAsync(aiCliConfig, cancellationToken);
             Console.WriteLine(
-                "✅ Model preference saved. You can change it anytime again with " + Bold().Yellow().Text("ai model")
+                "✅ Model preference saved. You can change it anytime again with "
+                    + Bold().Yellow().Text("ai model")
             );
         });
     }
@@ -241,8 +236,9 @@ static async Task<AiCliConfig> GetOrCreateConfigAsync(CancellationToken cancella
     try
     {
         var aiCliConfig =
-            JsonConvert.DeserializeObject<AiCliConfig>(await File.ReadAllTextAsync(configFilePath,
-                cancellationToken)) ?? new AiCliConfig();
+            JsonConvert.DeserializeObject<AiCliConfig>(
+                await File.ReadAllTextAsync(configFilePath, cancellationToken)
+            ) ?? new AiCliConfig();
         return aiCliConfig;
     }
     catch (Exception ex)
